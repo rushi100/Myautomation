@@ -1,0 +1,64 @@
+package pOM;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPagePOM1 {
+	
+	//Declration
+	
+	@FindBy(xpath="//input[@name='firstname']") public WebElement FirstName;
+	
+	@FindBy(xpath="//input[@name='lastname']") private WebElement LastName;
+	
+	@FindBy(xpath ="//input[@name='reg_email__']") private WebElement Email;
+	
+//	@FindBy(xpath="//input[@name='reg_email_confirmation__']") private WebElement Email2;
+	
+	@FindBy(xpath ="( //label[@class='custom-control-label'])[1]") private WebElement Btn;
+	
+	@FindBy(xpath="//input[@id='userNumber']") private WebElement MobNo;
+	
+	@FindBy(xpath="//select[@class='react-datepicker__year-select'") private WebElement Year;
+	
+	
+	
+	//intilization 	
+	      LoginPagePOM1(WebDriver Driver){                 
+		
+	    	  PageFactory.initElements(Driver,this);
+	      }    	  
+	    	  //Use   	  
+	    public void First(String Fname) {
+	    	
+	    	FirstName.sendKeys(Fname);
+	    }
+		public void Last(String Last) {
+			
+			LastName.sendKeys(Last);
+		}
+		public void Mail(String mail) {
+			
+			Email.sendKeys(mail);
+		}
+		
+		public void Mail2(String mail2) {
+			Email.sendKeys(mail2);
+		}
+		public void RadioButton() {
+			
+			Btn.click();		
+		}
+		public void Mob() {
+			MobNo.sendKeys("8999903110");
+		}
+		
+		
+		
+		}
+			
+	
+
+
