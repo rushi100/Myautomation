@@ -1,0 +1,9 @@
+public class Utility1 {
+	
+	public String readExcelSheet(int row, int col) throws EncryptedDocumentException, IOException {
+		FileInputStream file = new FileInputStream(Configurations.excelSheetPath);
+
+		Sheet sh = WorkbookFactory.create(file).getSheet("TC02");
+		String data = sh.getRow(row).getCell(col).getStringCellValue();
+		return data;
+	}
